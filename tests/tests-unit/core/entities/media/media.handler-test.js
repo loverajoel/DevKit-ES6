@@ -115,6 +115,15 @@ describe('OlapicMediaHandler', () => {
         });
     });
 
+    pit('should get a media by its url', () => {
+        return suite.connectDevKitAndExpect('media')
+        .then(() => OlapicMediaHandler.getMediaByUrl('media/12'))
+        .then((media) => {
+            expect(media).toEqual(jasmine.any(OlapicMediaEntity));
+            expect(media.get('caption')).toEqual('The Magic Caption');
+        });
+    });
+
 });
 
 // jscs:enable requireCamelCaseOrUpperCaseIdentifiers
