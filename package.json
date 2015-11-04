@@ -1,0 +1,46 @@
+{
+  "name": "OlapicDevKit-ES6",
+  "version": "1.0.0",
+  "devDependencies": {
+    "babel-cli": "6.0.2",
+    "babel-core": "6.0.12",
+    "gulp": "3.9.0 ",
+    "jest-cli": "0.5.10",
+    "babel-jest": "5.3.0",
+    "babel-preset-es2015": "6.0.11",
+    "gulp-bundlerify": "1.0.2",
+    "coveralls": "2.11.4"
+  },
+  "scripts": {
+    "start": "gulp serve",
+    "build": "gulp build; npm run es5",
+    "prepublish": "npm run build",
+    "test": "jest ./tests",
+    "coverage": "npm test; open coverage/lcov-report/index.html",
+    "lint": "gulp lint",
+    "docs": "gulp docs; open docs/index.html",
+    "es5": "babel --presets es2015 -d dist/es5/ src/"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testDirectoryName": "tests-unit",
+    "testFileExtensions": [
+      "es6",
+      "js",
+      "jsx"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "es6"
+    ],
+    "globals": {
+      "OLAPIC_TEST_UTILS": "tests-utils/index"
+    }
+  },
+  "author": "Olapic",
+  "license": "MIT",
+  "main": "dist"
+}

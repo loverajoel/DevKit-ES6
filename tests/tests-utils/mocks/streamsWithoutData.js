@@ -1,0 +1,1 @@
+export default '{"metadata":{"code":200,"message":"OK","version":"v2.2"}, "data": { "_links": { "self": { "href": "//z2photorankapi-a.akamaihd.net/media/2162370429/streams?auth_token=3ce1bf5b8071af8abc36ac5b71888414be2526fec0fd3d3d90c751b0255e009b&version=v2.2" } }, "_embedded": { "stream": null } } }';
