@@ -124,6 +124,30 @@ describe('OlapicMediaHandler', () => {
         });
     });
 
+    pit('should get a single media by its url from a list', () => {
+        return suite.connectDevKitAndExpect('mediaBatch')
+        .then(() => {
+            let mock = suite.getJSON('mediaBatch');
+            mock.data._links = [];
+            suite.expect(mock);
+            return OlapicMediaHandler.getMediaByUrl('media/12');
+        })
+
+        .then((media) => {
+            expect(media).toEqual(jasmine.any(OlapicMediaEntity));
+            expect(media.get('caption')).toEqual('#OlaTrip  #Spain');
+        });
+    });
+
+    pit('should get a media by its ID', () => {
+        return suite.connectDevKitAndExpect('media')
+        .then(() => OlapicMediaHandler.getMediaByID(12))
+        .then((media) => {
+            expect(media).toEqual(jasmine.any(OlapicMediaEntity));
+            expect(media.get('caption')).toEqual('The Magic Caption');
+        });
+    });
+
 });
 
 // jscs:enable requireCamelCaseOrUpperCaseIdentifiers

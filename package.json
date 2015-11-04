@@ -16,7 +16,7 @@
     "start": "gulp serve",
     "build": "gulp build; npm run es5",
     "prepublish": "npm run build",
-    "test": "jest ./tests",
+    "test": "jest ./tests --verbose",
     "coverage": "npm test; open coverage/lcov-report/index.html",
     "lint": "gulp lint",
     "docs": "gulp docs; open docs/index.html",
