@@ -1,6 +1,7 @@
 {
   "name": "OlapicDevKit-ES6",
   "version": "1.0.0",
+  "repository": "olapic/DevKit-ES6",
   "devDependencies": {
     "babel-cli": "6.0.2",
     "babel-core": "6.0.12",
